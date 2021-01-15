@@ -77,7 +77,7 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-fruitBasketSort=[...fruitBasket]
+/* fruitBasketSort=[...fruitBasket]
 fruitBasketSort=fruitBasketSort.sort(" ")
 function fruitsCount(arr,val){
 
@@ -85,7 +85,7 @@ function fruitsCount(arr,val){
   return element==val?acc++:acc
   },0)
 }
-console.log(fruitsCount(fruitBasketSort,fruitBasketSort[0]))
+console.log(fruitsCount(fruitBasketSort,fruitBasketSort[0])) */
 /* 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
 that fruit appeared. Use the variable defined above (fruitsObj). To get all the keys of an array you can use Object.keys()
@@ -113,8 +113,8 @@ const data = [
 ];
 
 // Using reduce flat data array
-
-
+dataFlat=[...data]
+console.log(dataFlat.flat(Infinity));
 
 
 
@@ -130,7 +130,8 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-
+dataFlat2=[...dataTwo]
+console.log(dataFlat.flat(Infinity));
 /*
 Create these functions which accepts a number value and returns a number value:
   - `increment` adds one to the input value
@@ -139,11 +140,29 @@ Create these functions which accepts a number value and returns a number value:
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
+function increment(value){
+  return value+1;
+}
 
+function double(value){
+  return value*2;
+}
+function decrement(value){
+  return value-1;
+}
+function triple(value){
+  return value*3;
+}
+function half(value){
+  return value/2;
+}
+function cbAvgNew(value,funct){
+  console.log(funct(value))
+}
 
-
-
-
+cbAvgNew(10,double);
+cbAvgNew(10,half);
+cbAvgNew(10,triple);
 
 /* let pipeline = [
   increment,
@@ -169,8 +188,10 @@ EXAMPLE:
   ...
 */
 
-
-
+cbAvgNew(3,double);
+cbAvgNew(3,half);
+cbAvgNew(3,triple);
+cbAvgNew(3,decrement);
 
 
 
@@ -189,3 +210,7 @@ EXAMPLE:
 ];
  */
 // Find the output using pipeline2 the initial value if 8
+cbAvgNew(8,double);
+cbAvgNew(8,half);
+cbAvgNew(8,triple);
+cbAvgNew(8,decrement);
