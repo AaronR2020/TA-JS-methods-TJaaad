@@ -1,6 +1,6 @@
 #### Open `index.js` and do the following:
 
-You have a file named `data.js` that contains the data that is accessible to you using name `got`.
+You have a file named `data.js` that contains the data that is accessible to you using name `got`.   
 
 Note: Solve all the problems without using the reduce method.
 
