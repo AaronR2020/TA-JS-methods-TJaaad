@@ -1,42 +1,61 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
+// NOTE: You can not use reduce methods to solve this exercise
 
 function countAllPeople() {
   // your code goes here
-  return got.houses.reduce((acc,house)=>{acc=house.people.length;
-  
-  },[])
-
+  function sumppl(people){
+   return people.people.length;
+  }
+  let sum=got.houses.map(sumppl)
+  var sumOf=0;
+  for(let num of sum){
+    sumOf+=num
+  }
+  return sumOf;
 }
 
 function peopleByHouses() {
   // your code goes here
+let obj={}
+for(i=0;i<got.houses.length;i++){
+  obj[got.houses[i].name]=got.houses[i].people.length;
+}
+return obj;
 }
 
 function everyone() {
-  // your code goes here
+  return got.houses.map((names)=>{return names.people.map((ppl)=>{return ppl.name})}).flat(Infinity)
 }
 
 function nameWithS() {
-  // your code goes here
+  let sum= got.houses.map((names)=>{return names.people.filter((people)=>{return people.name.charAt(0)=="s"||people.name.charAt(0)=="S"?people.name:false})}).flat(Infinity)
+  return sum.map((val)=>{return val.name})
 }
 
 function nameWithA() {
   // your code goes here
+  let sum= got.houses.map((names)=>{return names.people.filter((people)=>{return people.name.charAt(0)=="a"||people.name.charAt(0)=="A"?people.name:false})}).flat(Infinity)
+  return sum.map((val)=>{return val.name})
 }
 
 function surnameWithS() {
-  // your code goes here
+  return got.houses.filter((house)=>house.name.charAt(0)=="S"||house.name.charAt(0)=="s"?true:false ).map((val)=>val.name)
 }
 
 function surnameWithA() {
   // your code goes here
+  return got.houses.filter((house)=>house.name.charAt(0)=="a"||house.name.charAt(0)=="A"?true:false ).map((val)=>val.name)
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let obj={};
+  
+  for(let i=0;i<got.houses.length;i++){
+    obj[got.houses[i].name]=got.houses[i].people.map((names)=>names.name).flat(Infinity);
+  }
+return obj; 
 }
-
-
 
 
 // Testing your result after writing your function
