@@ -2,6 +2,10 @@
 
 function countAllPeople() {
   // your code goes here
+  return got.houses.reduce((acc,house)=>{acc=house.people.length;
+  
+  },[])
+
 }
 
 function peopleByHouses() {
@@ -31,6 +35,9 @@ function surnameWithA() {
 function peopleNameOfAllHouses() {
   // your code goes here
 }
+
+
+
 
 // Testing your result after writing your function
 console.log(countAllPeople());
